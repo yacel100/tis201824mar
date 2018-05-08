@@ -16,8 +16,9 @@ class CreateAsignacionTribunalTable extends Migration
             $table->increments('id_asignacion_tribunal');
             $table->date('fecha_asignacion');
 
-            $table->integer('id_proyecto')->unsigned();
-            $table->foreign('id_proyecto')->references('id')->on('proyectos')->onDelete('cascade');
+            $table->integer('id_profesional')->unsigned();
+            $table->foreign('id_profesional')->references('id')->on('profesionals')->onDelete('cascade');
+
             $table->integer('id_proyectos')->unsigned();
             $table->foreign('id_proyectos')->references('id')->on('proyectos')->onDelete('cascade');
 
